@@ -1,0 +1,48 @@
+
+.linha{
+	height:1px;
+	width: 1px;
+	position: relative;
+	top: 100px;
+}
+
+#form1{
+	
+	position: relative;
+	left: 120px;
+	
+}
+#form2{
+	position: relative;
+	left: 0px;
+}
+#form3{
+	position: relative;
+	left: 120px;
+}
+
+.Limpar{
+	position: relative;
+
+	top: 10px;
+	left: 80px;
+}
+
+.Enviar{
+	position: relative;
+	top: 10px;
+	left: 220px;
+}
+
+#x{
+	position: relative;
+	color: red;
+}
+
+#demo{
+	color: red;
+	position: absolute;
+	left: 390px;
+	top: 180px;
+	font-family: Impact;
+}
