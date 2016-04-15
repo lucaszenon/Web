@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+ <html lang ="pt-br">
+ <head>
+ <title>Testando jQuery UI</title>
+<meta charset="utf-8">
+ <link type="text/css" href="js/jquery-ui.css" rel="stylesheet" />
+<script type ="text/javascript" src="js/jquery-2.1.1.min.js"> </script>
+ <script type="text/javascript" src="js/jquery-ui.js"> </script>
+ </head>
+ <body>
+ <div class="dialogo" title="Janela Modal">
+ <p> Conteúdo blá blá blá blá blá </p>
+ </div>
+ <script>
+ $(function(){
+ $ (".dialogo").dialog({
+ modal: true
+ });
+ });
+  </script>
+ </body>
+</html>
