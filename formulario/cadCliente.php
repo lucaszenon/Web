@@ -35,13 +35,30 @@
 	echo "Senha não correspondente";
 	$camposOK = false;
 	}
- 	$dia = substr($dtNasc,0,2);
-	$mes = substr($dtNasc,3,2);
-	$ano = substr($dtNasc,6,4);
-	
+ 	$dia1 = substr($dtNasc,0,2);
+	$mes1 = substr($dtNasc,3,2);
+	$ano1 = substr($dtNasc,6,4);
+	$dia = intval($dia1);
+	$mes = intval($mes1);
+	$ano = intval($ano1);
+	if($dia < 1 || $dia > 31){
+	echo "Dia inválido";
+	$camposOK = false;
+}
 
+	if($mes < 1 || $mes > 12){
+	echo "Mes inválido";
+	$camposOK = false;
+}
+
+	if($ano < 1500 || $ano > 2500){
+	echo "Ano inválido";
+	$camposOK = false;
+}
 $var= true;
-if (strlen($cpf) != 14) {
+$cpf = ereg_replace('[^0-9]', '', $cpf);
+$cpf = str_pad($cpf, 11, '0', STR_PAD_LEFT);
+if (strlen($cpf) != 11) {
         $var=false;
     }
 else if ($cpf == '00000000000' || 
@@ -63,16 +80,13 @@ for ($t = 9; $t < 11; $t++) {
             }
             $d = ((10 * $d) % 11) % 10;
             if ($cpf{$c} != $d) {
-                $var=false;
-            }
+                $camposOK=false;
+				echo "Informe um cpf válido.<br>"  ;         
+ }
         }
  
         $var= true;
     }
-
-if($var == false){
-echo "Informe um cpf válido.<br>";
-}
 	
 		//Aqui completar ?????
 	if($camposOK){
