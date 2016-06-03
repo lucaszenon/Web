@@ -9,14 +9,24 @@
 <?php
 	echo "<h1>Os dados informados são:<h1>";
 	$nome = $_POST["txtNome"];
+	$arquivo = $_FILES["txtFoto"];
 	$ender = $_POST["txtEndereco"];
 	$cpf = $_POST["txtCPF"];
 	$estado = $_POST["listEstados"];
 	$dtNasc = $_POST["txtData"];
 	$sexo = $_POST["sexo"];
-	$cinema = $_POST["checkCinema"];
-	$musica = $_POST["checkMusica"];
-	$info = $_POST["checkInfo"];
+	if(isset($_POST["checkCinema"]))
+	$cinema = true;
+	else
+	$cinema = false;
+	if(isset($_POST["checkMusica"]))
+	$musica = true;
+	else
+	$musica = false;
+	if(isset($_POST["checkInfo"]))
+	$info = true;
+	else
+	$info = false;
 	$login = $_POST["txtLogin"];
 	$senha1 = $_POST["txtSenha1"];
 	$senha2 = $_POST["txtSenha2"];
@@ -35,26 +45,11 @@
 	echo "Senha não correspondente";
 	$camposOK = false;
 	}
- 	$dia1 = substr($dtNasc,0,2);
-	$mes1 = substr($dtNasc,3,2);
-	$ano1 = substr($dtNasc,6,4);
-	$dia = intval($dia1);
-	$mes = intval($mes1);
-	$ano = intval($ano1);
-	if($dia < 1 || $dia > 31){
-	echo "Dia inválido";
-	$camposOK = false;
-}
+ 	$dia = substr($dtNasc,0,2);
+	$mes = substr($dtNasc,3,2);
+	$ano = substr($dtNasc,6,4);
+	
 
-	if($mes < 1 || $mes > 12){
-	echo "Mes inválido";
-	$camposOK = false;
-}
-
-	if($ano < 1500 || $ano > 2500){
-	echo "Ano inválido";
-	$camposOK = false;
-}
 $var= true;
 $cpf = ereg_replace('[^0-9]', '', $cpf);
 $cpf = str_pad($cpf, 11, '0', STR_PAD_LEFT);
@@ -87,10 +82,35 @@ for ($t = 9; $t < 11; $t++) {
  
         $var= true;
     }
+
+	if($arquivo['error']!= 0 || $arquivo['size'] == 0){
+		echo "Erro no envio do arquivo <br>";
+		$camposOK = false;
+	}
+	if($arquivo['size']>10000000){
+		echo "Tamanho maior que o permitido <br>";
+		$camposOK = false;
+	}
+	if(($arquivo['type'] != "image/gif") &&
+	($arquivo['type'] != "image/jpeg") &&
+	($arquivo['type'] != "image/png") &&
+	($arquivo['type'] != "image/bmp") &&
+	($arquivo['type'] != "image/jpg")){
+		echo "Tipo de arquivo não permitido";
+		$camposOK = false;
+	}
+	$file_src = '../tmp'.$_FILES['txtFoto']['name'];
+	if(!move_uploaded_file($_FILES['txtFoto']['tmp_name'],$file_src)){
+		echo "Erro ao mover o arquivo <br>";
+		$camposOK = false;
+	}
 	
+
+
 		//Aqui completar ?????
 	if($camposOK){
 	echo "<table border='0' cellpadding='5'>";
+	echo "<tr><td><img height='120' width='120' src='$file_src'></td></tr> ";
 	echo "<tr><td>NOME:</td><td><b>$nome</b></td></tr>";
 	echo "<tr><td>Endereço:</td><td><b>$ender</b></td></tr>";
 	echo "<tr><td>CPF:</td><td><b>$cpf</b></td></tr>";
@@ -114,41 +134,3 @@ for ($t = 9; $t < 11; $t++) {
 
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-?>
-</body>
-</html>
