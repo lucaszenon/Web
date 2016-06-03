@@ -14,12 +14,17 @@
 		</script>
 	</head>
 	<body>
-		<form method="post" name="formCadastro" action="cadCliente.php">
+		<form method="post" name="formCadastro" action="cadCliente.php" 
+		enctype="multipart/form-data">
 		<h1>Cadastro de Clientes</h1>
 		<table width="100%">
 			<tr>
 				<th width="18%">Nome</th>
 				<td width="82%"><input type="text" name="txtNome"/></td>
+			</tr>
+			<tr>
+				<th>Foto</th>
+					<td><input type="file" name="txtFoto"></td>				
 			</tr>
 			<tr>
 				<th>CPF</th>
