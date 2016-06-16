@@ -18,10 +18,17 @@
 <html>
 	<head>
 		<meta charset="utf-8">
+		<link rel="stylesheet" href="style.css" type="text/css">
 		<title>Cadastro de Alunos</title>
 	</head>
 	<body>
-		<h1>Cadastro de Alunos</h1>
+		<div class="cabecalho">
+			<p><img src="images.jpg"></img></p>
+			<p><p><a href="home.html">HOME</a></p>
+			<p><a href="home.html">CLIENTES</a></p>
+			<p><a href="home.html">FORNECEDORES</a></p>
+			<p><a href="home.html">SOBRE</a></p>
+		</div>
 		<p><a href="form-add.php">Adicionar Usuário</a></p>
 		<h2>Lista de Alunos</h2>
 		<p>Total de usuários: <?php echo $total ?></p>
