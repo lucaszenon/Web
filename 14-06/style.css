@@ -1,5 +1,18 @@
 .cabecalho{
-	height:100px;
-	width:1000px;
+	height:93px;
+	width:1600px;
 	background-color:gray;
+}
+
+#logo{
+float:left;
+}
+
+#menus{
+display:inline-block;
+margin:35px;
+}
+
+div div a{
+padding-left:200px;
 }

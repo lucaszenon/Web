@@ -23,11 +23,12 @@
 	</head>
 	<body>
 		<div class="cabecalho">
-			<p><img src="images.jpg"></img></p>
-			<p><p><a href="home.html">HOME</a></p>
-			<p><a href="home.html">CLIENTES</a></p>
-			<p><a href="home.html">FORNECEDORES</a></p>
-			<p><a href="home.html">SOBRE</a></p>
+			<div id="logo"><img src="images.jpg"></img></div>
+			<div id="menus">
+			<a href="home.html">HOME</a>
+			<a href="home.html">CLIENTES</a>
+			<a href="home.html">FORNECEDORES</a>
+			<a href="home.html">SOBRE</a></div>
 		</div>
 		<p><a href="form-add.php">Adicionar Usuário</a></p>
 		<h2>Lista de Alunos</h2>
