@@ -1,3 +1,4 @@
+//OK
 <?php
 	require 'init.php';
 ?>
@@ -11,22 +12,22 @@
 	</head>
 	<body>
 		<form method="post" name="formCadastro" action="add.php" enctype="multipart/form-data">
-			<h1>Cadastro Alunos</h1>
+			<h1>Cadastro Clientes</h1>
 			<table width="100%">
 				<tr>
 					<th width="18%"> Nome </th>
 					<td width="82%"><input type="text" name="txtNome"></td>
+				</tr>	
+				<tr>
+					<th> Email </th>
+					<td><input type="email" name="txtEmail"></td>
 				</tr>
 				<tr>
-					<th> Data de Nascimento </th>
+					<th> Data Cadastro </th>
 					<td><input id="data" type="text" name="txtData"></td>
                     <script>
 		            	$("#data").mask("99/99/9999");
 		        	</script>
-				</tr>
-				<tr>
-					<th>Foto</th>
-					<td><input type="file" name="txtFoto"></td>
 				</tr>
 				<tr>
 					<td></td>

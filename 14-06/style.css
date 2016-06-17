@@ -1,7 +1,7 @@
 .cabecalho{
 	height:93px;
 	width:1600px;
-	background-color:gray;
+	background-color:#D3D3D3;
 }
 
 #logo{
@@ -15,4 +15,24 @@ margin:35px;
 
 div div a{
 padding-left:200px;
+}
+
+p{
+	text-align:center;
+}
+
+h1{
+	text-align:center;
+}
+
+.rodape{
+ position:relative;
+top: 170px;		
+  float: left;	
+  width: 1600px;
+  height:100px;	
+  padding: 10px;
+  text-align: center;
+background-color:#D3D3D3;
+ 
 }

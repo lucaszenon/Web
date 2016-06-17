@@ -1,4 +1,3 @@
-//OK
 <?php
 	/*conecta com o mysql usando POO*/
 	function db_connect(){
